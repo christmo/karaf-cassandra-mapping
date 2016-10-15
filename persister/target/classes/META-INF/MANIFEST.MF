@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1476504312217
+Build-Jdk: 1.8.0_65
+Built-By: christmo
+Bundle-ManifestVersion: 2
+Bundle-Name: persister
+Bundle-SymbolicName: io.twim.persister
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Tool: Bnd-3.0.0.201509101326
