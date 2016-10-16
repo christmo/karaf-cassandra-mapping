@@ -6,7 +6,7 @@
         <additionalProperties>
           <property key="Bundle-Vendor" value="TWIM Corporation" />
           <property key="Import-Package" value="*" />
-          <property key="Export-Package" value="io.twim.services" />
+          <property key="Export-Package" value="io.twim.services.*" />
           <property key="Bundle-Name" value="services" />
           <property key="Include-Resource" value="OSGI-INF/blueprint.xml=$MODULE_DIR$/src/main/resources/OSGI-INF/blueprint.xml" />
         </additionalProperties>
@@ -34,7 +34,6 @@
     <orderEntry type="library" name="Maven: io.netty:netty-transport:4.0.37.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-codec:4.0.37.Final" level="project" />
     <orderEntry type="library" name="Maven: io.dropwizard.metrics:metrics-core:3.1.2" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.7" level="project" />
     <orderEntry type="library" name="Maven: com.github.jnr:jnr-ffi:2.0.7" level="project" />
     <orderEntry type="library" name="Maven: com.github.jnr:jffi:1.2.10" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.github.jnr:jffi:native:1.2.10" level="project" />
@@ -48,5 +47,11 @@
     <orderEntry type="library" name="Maven: com.github.jnr:jnr-constants:0.9.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.guava:guava:16.0.1" level="project" />
     <orderEntry type="module" module-name="persister" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.osgi:org.osgi.core:6.0.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.karaf.shell:org.apache.karaf.shell.core:4.1.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jline:jline:3.0.0.M2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.karaf.jaas:org.apache.karaf.jaas.boot:4.1.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.sshd:sshd-core:1.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.16" level="project" />
   </component>
 </module>

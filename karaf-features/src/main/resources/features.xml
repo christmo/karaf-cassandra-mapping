@@ -7,28 +7,22 @@
 
 <features name="io.twim-${project.version}">
 
+    <repository>mvn:org.apache.camel.karaf/apache-camel/${camel-version}/xml/features</repository>
+
     <feature name="cassandra-installer" version="${project.version}">
+        <feature version="2.16.1">camel-blueprint</feature>
+        <feature version="2.16.1">camel-netty4</feature>
         <feature>jndi</feature>
-
         <bundle>mvn:org.eclipse.persistence/javax.persistence/2.1.0</bundle>
-        <feature version="${camel-version}">camel-blueprint</feature>
-        <bundle>mvn:org.apache.commons/commons-pool2/${commons.pool2.version}</bundle>
-
-        <feature version="${camel-version}">camel-netty4</feature>
-
         <bundle>mvn:com.google.guava/guava/19.0</bundle>
         <bundle>mvn:io.dropwizard.metrics/metrics-core/3.1.2</bundle>
+        <bundle>mvn:com.datastax.cassandra/cassandra-driver-core/3.2.0-SNAPSHOT</bundle>
+        <bundle>mvn:com.datastax.cassandra/cassandra-driver-mapping/3.2.0-SNAPSHOT</bundle>
+        <bundle>mvn:com.datastax.cassandra/cassandra-driver-extras/3.2.0-SNAPSHOT</bundle>
 
-        <bundle>mvn:com.datastax.cassandra/cassandra-driver-core/${cassandra-driver-mapping}</bundle>
-        <bundle>mvn:com.datastax.cassandra/cassandra-driver-mapping/${cassandra-driver-mapping}</bundle>
-        <bundle>mvn:com.datastax.cassandra/cassandra-driver-extras/${cassandra-driver-mapping}</bundle>
-        <bundle>wrap:mvn:com.valchkou.datastax/cassandra-driver-mapping/${cassandra-driver-mapping.valchkou}</bundle>
-
-        <bundle>mvn:com.google.code.gson/gson/${gson}</bundle>
-        <bundle>mvn:io.twim/persister/${project.version}</bundle>
-        <capability>
-
-        </capability>
+        <bundle>mvn:io.twim/model/1.0-SNAPSHOT</bundle>
+        <bundle>mvn:io.twim/persister/1.0-SNAPSHOT</bundle>
+        <bundle>mvn:io.twim/services/1.0-SNAPSHOT</bundle>
     </feature>
 
 

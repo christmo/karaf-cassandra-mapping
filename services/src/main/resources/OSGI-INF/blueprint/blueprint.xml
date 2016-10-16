@@ -9,10 +9,16 @@
            xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd
                         http://www.osgi.org/xmlns/blueprint/v1.0.0 ">
 
-    <reference id="services" interface="io.twim.persister.CRUD"/>
+    <reference id="crud" interface="io.twim.persister.CRUD"/>
 
-    <bean id="ClientRegistrationImpl" class="io.twim.services.ClientRegistrationImpl" init-method="init">
-        <property name="services" ref="services"/>
+    <service ref="ClientRegistrationImpl" auto-export="interfaces"/>
+
+    <bean id="ClientRegistrationImpl" class="io.twim.services.ClientRegistrationImpl" >
+        <property name="services" ref="crud"/>
+    </bean>
+
+    <bean id="CassandraCommand" class="io.twim.services.command.CassandraCommand">
+        <property name="registration" ref="ClientRegistrationImpl" />
     </bean>
 
 </blueprint>

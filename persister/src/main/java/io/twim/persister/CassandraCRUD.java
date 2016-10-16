@@ -32,6 +32,8 @@ public class CassandraCRUD implements CRUD {
 
     public void init() throws Exception {
 
+        System.out.println("init");
+
         Cluster.Builder builder = Cluster.builder();
         builder.withLoadBalancingPolicy(LatencyAwarePolicy.builder(new RoundRobinPolicy()).build());
         builder.withReconnectionPolicy(new ConstantReconnectionPolicy(1000L));
@@ -53,6 +55,8 @@ public class CassandraCRUD implements CRUD {
         }
 
         cluster = builder.build();
+        session = cluster.connect(keyspace);
+        manager = new MappingManager(session);
 
         registryCodecs(keyspace);
     }

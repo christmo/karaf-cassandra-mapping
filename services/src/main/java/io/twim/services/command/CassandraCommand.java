@@ -4,29 +4,36 @@
  * This document is the property of TWIM, you cannot copy or reproduce this without authorization.
  */
 
-package io.twim.services;
+package io.twim.services.command;
 
 import io.twim.model.Client;
 import io.twim.model.UserSubject;
-import io.twim.persister.CRUD;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import io.twim.services.ClientRegistrationImpl;
+import io.twim.services.Services;
+import org.apache.karaf.shell.api.action.Action;
+import org.apache.karaf.shell.api.action.Command;
+import org.apache.karaf.shell.api.action.lifecycle.Reference;
+import org.apache.karaf.shell.api.action.lifecycle.Service;
 
 import java.util.*;
 
+import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
+
 /**
- * Created by christmo on 8/9/16.
+ * Command used to test a cassandra connection
+ * Created by christmo on 9/8/16.
  */
-public class ClientRegistrationImpl implements Services {
+@Command(scope = "twim", name = "cassandra", description = "Cassandra Tester Cluster")
+@Service
+public class CassandraCommand implements Action {
 
-    private static final Logger log = LoggerFactory.getLogger(ClientRegistrationImpl.class);
+    @Reference
+    private Services registration;
 
-    private CRUD services;
+    @Override
+    public Object execute() throws Exception {
+        System.out.println(registration);
 
-    public ClientRegistrationImpl() {
-    }
-
-    public void save() {
         List<Client> clients = new ArrayList<>();
         Client client = new Client();
         client.setClientId("christmo");
@@ -62,23 +69,15 @@ public class ClientRegistrationImpl implements Services {
         client.setAllowedGrantTypes(keys);
 
         clients.add(client);
-        try {
-            client.setApplicationId(UUID.randomUUID());
-            client.setCreationDate(new Date());
-            services.save(client, Client.class);
-        } catch (Exception e) {
-            log.error("Error saving", e);
-        }
 
+        client.setApplicationId(UUID.randomUUID());
+        client.setCreationDate(new Date());
+        registration.saveClient(client, Client.class);
+
+        return "hello";
     }
 
-    public void setServices(CRUD services) {
-        this.services = services;
-    }
-
-    @Override
-    public void saveClient(Client client, Class<Client> clientClass) {
-        System.out.println(services);
-        services.save(client, clientClass);
+    public void setRegistration(Services registration) {
+        this.registration = registration;
     }
 }
