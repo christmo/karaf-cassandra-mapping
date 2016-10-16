@@ -13,21 +13,41 @@
     <artifactId>persister</artifactId>
     <packaging>bundle</packaging>
 
+    <properties>
+        <twim.export.package>io.twim.persister</twim.export.package>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>io.twim</groupId>
+            <artifactId>model</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.datastax.cassandra</groupId>
+            <artifactId>cassandra-driver-core</artifactId>
+            <version>${cassandra-driver-mapping}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.datastax.cassandra</groupId>
+            <artifactId>cassandra-driver-mapping</artifactId>
+            <version>${cassandra-driver-mapping}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.datastax.cassandra</groupId>
+            <artifactId>cassandra-driver-extras</artifactId>
+            <version>${cassandra-driver-mapping}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.karaf.tooling</groupId>
                 <artifactId>karaf-services-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <configuration>
-                    <instructions>
-                        <Export-Package>com.twim.*</Export-Package>
-                    </instructions>
-                </configuration>
             </plugin>
         </plugins>
     </build>

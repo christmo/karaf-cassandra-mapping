@@ -16,11 +16,6 @@
 hs_err_pid*
 
 .idea/
-.idea/compiler.xml
-.idea/copyright/
-.idea/karaf-cassandra-mapping.iml
-.idea/misc.xml
-.idea/modules.xml
-.idea/workspace.xml
+
 
 *.iml

@@ -1,0 +1,24 @@
+<!--
+  ~ TWIM Copyright (c) 2016
+  ~
+  ~ This document is the property of TWIM, you cannot copy or reproduce this without authorization.
+  -->
+
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd">
+
+    <bean id="cassandraImpl" class="io.twim.persister.CassandraCRUD" init-method="init">
+        <property name="clusterName" value="Test"/>
+        <property name="port" value="9042"/>
+        <property name="ip" value="localhost"/>
+        <property name="keyspace" value="twim_test"/>
+    </bean>
+
+    <service id="cassandraService" interface="io.twim.persister.CRUD" ref="cassandraImpl" >
+        <service-properties>
+            <entry key="osgi.jndi.service.name" value="cassandra"/>
+        </service-properties>
+    </service>
+
+</blueprint>
