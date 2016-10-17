@@ -6,6 +6,7 @@ import com.datastax.driver.core.policies.LatencyAwarePolicy;
 import com.datastax.driver.core.policies.RoundRobinPolicy;
 import com.datastax.driver.mapping.Mapper;
 import com.datastax.driver.mapping.MappingManager;
+import io.twim.interfaces.CRUD;
 import io.twim.model.UserSubject;
 import io.twim.model.UserSubjectCodec;
 import org.slf4j.Logger;

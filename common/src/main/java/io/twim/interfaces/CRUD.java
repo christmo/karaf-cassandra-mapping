@@ -1,4 +1,4 @@
-package io.twim.persister;
+package io.twim.interfaces;
 
 /**
  * Created by christmo on 15/10/16.

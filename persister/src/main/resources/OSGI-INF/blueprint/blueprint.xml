@@ -15,7 +15,7 @@
         <property name="keyspace" value="twim_test"/>
     </bean>
 
-    <service id="cassandraService" interface="io.twim.persister.CRUD" ref="cassandraImpl" >
+    <service id="cassandraService" interface="io.twim.interfaces.CRUD" ref="cassandraImpl">
         <service-properties>
             <entry key="osgi.jndi.service.name" value="cassandra"/>
         </service-properties>

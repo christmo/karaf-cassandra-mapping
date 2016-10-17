@@ -1,62 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  ~ /*
-  ~  * TWI Teleworking Inclusive
-  ~  */
-  -->
 
 <features name="io.twim-${project.version}">
 
     <repository>mvn:org.apache.camel.karaf/apache-camel/${camel-version}/xml/features</repository>
 
     <feature name="cassandra-installer" version="${project.version}">
-        <feature version="2.16.1">camel-blueprint</feature>
-        <feature version="2.16.1">camel-netty4</feature>
+        <feature version="${camel-version}">camel-blueprint</feature>
+        <feature version="${camel-version}">camel-netty4</feature>
         <feature>jndi</feature>
         <bundle>mvn:org.eclipse.persistence/javax.persistence/2.1.0</bundle>
         <bundle>mvn:com.google.guava/guava/19.0</bundle>
         <bundle>mvn:io.dropwizard.metrics/metrics-core/3.1.2</bundle>
-        <bundle>mvn:com.datastax.cassandra/cassandra-driver-core/3.2.0-SNAPSHOT</bundle>
-        <bundle>mvn:com.datastax.cassandra/cassandra-driver-mapping/3.2.0-SNAPSHOT</bundle>
-        <bundle>mvn:com.datastax.cassandra/cassandra-driver-extras/3.2.0-SNAPSHOT</bundle>
+        <bundle>mvn:com.datastax.cassandra/cassandra-driver-core/${cassandra-driver-mapping}</bundle>
+        <bundle>mvn:com.datastax.cassandra/cassandra-driver-mapping/${cassandra-driver-mapping}</bundle>
+        <bundle>mvn:com.datastax.cassandra/cassandra-driver-extras/${cassandra-driver-mapping}</bundle>
 
-        <bundle>mvn:io.twim/model/1.0-SNAPSHOT</bundle>
-        <bundle>mvn:io.twim/persister/1.0-SNAPSHOT</bundle>
-        <bundle>mvn:io.twim/services/1.0-SNAPSHOT</bundle>
+        <bundle>mvn:io.twim/model/${project.version}</bundle>
+        <bundle>mvn:io.twim/common/${project.version}</bundle>
+        <bundle>mvn:io.twim/persister/${project.version}</bundle>
+        <bundle>mvn:io.twim/services/${project.version}</bundle>
+        <bundle>mvn:io.twim/frontend/${project.version}</bundle>
     </feature>
-
-
-    <feature name="users" version="${project.version}">
-        <feature version="${camel-version}">camel-blueprint</feature>
-        <feature>war</feature>
-        <feature>cxf</feature>
-        <feature>cxf-commands</feature>
-        <bundle>mvn:org.apache.cxf/cxf-rt-rs-json-basic/${cxf-version}</bundle>
-        <feature>cxf-rs-security-jose</feature>
-        <!--<bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.xalan/2.7.1_7</bundle>
-        <bundle dependency="true">mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.bcel/5.2_4</bundle>-->
-        <feature>cxf-rs-security-oauth2</feature>
-        <feature>twim-logger</feature>
-        <!--<feature>twim-cache</feature>-->
-
-        <bundle>mvn:com.google.code.gson/gson/${gson}</bundle>
-        <bundle>mvn:io.twim/twim-common/${project.version}</bundle>
-        <bundle>mvn:org.eclipse.persistence/javax.persistence/2.1.0</bundle>
-        <bundle>mvn:io.twim/twim-core-model/${project.version}</bundle>
-
-        <feature>twim-auth</feature>
-
-        <bundle>mvn:commons-validator/commons-validator/1.5.1</bundle>
-        <bundle>mvn:commons-beanutils/commons-beanutils/1.9.2</bundle>
-        <bundle>mvn:commons-collections/commons-collections/3.2.2</bundle>
-        <bundle>mvn:commons-digester/commons-digester/2.1</bundle>
-        <bundle>mvn:org.apache.cxf/cxf-rt-rs-security-sso-oidc/${cxf-version}</bundle>
-
-        <!--<bundle>mvn:org.apache.cxf/cxf-rt-rs-security-jose/${cxf-version}</bundle>-->
-        <bundle>mvn:io.jsonwebtoken/jjwt/${jjwt}</bundle>
-        <bundle>mvn:io.twim/twim-core/${project.version}</bundle>
-        <bundle>mvn:io.twim/twim-rest/${project.version}</bundle>
-    </feature>
-
 
 </features>

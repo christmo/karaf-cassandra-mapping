@@ -8,7 +8,7 @@
           <property key="Import-Package" value="*" />
           <property key="Export-Package" value="io.twim.persister" />
           <property key="Bundle-Name" value="persister" />
-          <property key="Include-Resource" value="OSGI-INF/blueprint.xml=$MODULE_DIR$/src/main/resources/OSGI-INF/blueprint.xml" />
+          <property key="Include-Resource" value="OSGI-INF/blueprint/blueprint.xml=$MODULE_DIR$/src/main/resources/OSGI-INF/blueprint/blueprint.xml" />
         </additionalProperties>
         <additionalJARContents />
       </configuration>
@@ -26,7 +26,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="model" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.datastax.cassandra:cassandra-driver-core:3.2.0-SNAPSHOT" level="project" />
+    <orderEntry type="module" module-name="common" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.datastax.cassandra:cassandra-driver-core:3.1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: io.netty:netty-handler:4.0.37.Final" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: io.netty:netty-buffer:4.0.37.Final" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: io.netty:netty-common:4.0.37.Final" level="project" />
@@ -46,8 +47,8 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.jnr:jnr-x86asm:1.0.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.jnr:jnr-posix:3.0.27" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.github.jnr:jnr-constants:0.9.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.datastax.cassandra:cassandra-driver-mapping:3.2.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.datastax.cassandra:cassandra-driver-extras:3.2.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.datastax.cassandra:cassandra-driver-mapping:3.1.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.datastax.cassandra:cassandra-driver-extras:3.1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.osgi:org.osgi.core:6.0.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.karaf.shell:org.apache.karaf.shell.core:4.1.0-SNAPSHOT" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.jline:jline:3.0.0.M2" level="project" />

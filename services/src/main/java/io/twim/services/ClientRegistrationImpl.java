@@ -6,9 +6,10 @@
 
 package io.twim.services;
 
+import io.twim.interfaces.CRUD;
+import io.twim.interfaces.Services;
 import io.twim.model.Client;
 import io.twim.model.UserSubject;
-import io.twim.persister.CRUD;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

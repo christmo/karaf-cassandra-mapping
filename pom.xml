@@ -12,8 +12,10 @@
     <modules>
         <module>karaf-features</module>
         <module>model</module>
+        <module>common</module>
         <module>services</module>
         <module>persister</module>
+        <module>frontend</module>
     </modules>
 
     <properties>
@@ -21,7 +23,8 @@
         <karaf-version>4.1.0-SNAPSHOT</karaf-version>
         <org-osgi-core>6.0.0</org-osgi-core>
         <maven-bundle-plugin>3.0.1</maven-bundle-plugin>
-        <cassandra-driver-mapping>3.2.0-SNAPSHOT</cassandra-driver-mapping>
+        <!--<cassandra-driver-mapping>3.2.0-SNAPSHOT</cassandra-driver-mapping>-->
+        <cassandra-driver-mapping>3.1.1</cassandra-driver-mapping>
         <maven-resources-plugin>2.7</maven-resources-plugin>
         <maven-compiler-plugin>3.3</maven-compiler-plugin>
         <build-helper-maven-plugin>1.9.1</build-helper-maven-plugin>

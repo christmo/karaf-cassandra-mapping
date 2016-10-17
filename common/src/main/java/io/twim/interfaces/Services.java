@@ -1,4 +1,4 @@
-package io.twim.services;
+package io.twim.interfaces;
 
 import io.twim.model.Client;
 

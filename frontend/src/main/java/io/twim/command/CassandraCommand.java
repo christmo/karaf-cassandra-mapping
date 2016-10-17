@@ -4,20 +4,17 @@
  * This document is the property of TWIM, you cannot copy or reproduce this without authorization.
  */
 
-package io.twim.services.command;
+package io.twim.command;
 
+import io.twim.interfaces.Services;
 import io.twim.model.Client;
 import io.twim.model.UserSubject;
-import io.twim.services.ClientRegistrationImpl;
-import io.twim.services.Services;
 import org.apache.karaf.shell.api.action.Action;
 import org.apache.karaf.shell.api.action.Command;
 import org.apache.karaf.shell.api.action.lifecycle.Reference;
 import org.apache.karaf.shell.api.action.lifecycle.Service;
 
 import java.util.*;
-
-import static jdk.nashorn.internal.runtime.regexp.joni.Config.log;
 
 /**
  * Command used to test a cassandra connection
@@ -74,7 +71,7 @@ public class CassandraCommand implements Action {
         client.setCreationDate(new Date());
         registration.saveClient(client, Client.class);
 
-        return "hello";
+        return "Inserted App:" + client.getApplicationId();
     }
 
     public void setRegistration(Services registration) {
